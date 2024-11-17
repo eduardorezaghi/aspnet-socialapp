@@ -1,0 +1,15 @@
+services:
+  db:
+    container_name: socialnet_db
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: db_admin
+      POSTGRES_PASSWORD: pass123
+      POSTGRES_DB: socialnetwork
+    ports:
+      - "5477:5432"
+    volumes:
+      - socialnet_db:/var/lib/postgresql/data
+
+volumes:
+  socialnet_db:

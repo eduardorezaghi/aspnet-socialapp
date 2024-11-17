@@ -4,9 +4,20 @@ This will be a DOTNET + Angular project to build a Social App web api.
 It will use .NET 8.0 ASP.NET framework API w/ C# to build the back-end,
 and Angular v18 for the front-end.
 
+
+
 ## Summary
+### Versions
+- .NET 8.0 | `dotnet --list-sdks`
+
+### Back-end
 Projects inside the [SocialApp.sln](./SocialApp.sln) solution file:
 - [API](./API/API.csproj) - ASP.NET Core Web API project
+
+The tools used in this back-end project are:
+- [Dotnet EF](https://docs.microsoft.com/en-us/ef/core/cli/dotnet)
+
+To list them, use `dotnet --list-sdks` and `dotnet --list-runtimes`.
 
 ## Requirements
 - Dotnet CLI
@@ -32,4 +43,10 @@ curl -X GET "http://localhost:5000/weatherforecast" -H  "accept: application/jso
 curlie localhost:5000/weatherforecast --proto http
 # or
 wget -qO- http://localhost:5000/weatherforecast
+```
+
+## Running migrations (API)
+To run the migrations, use the following command:
+```bash
+cd API; dotnet ef database update
 ```
